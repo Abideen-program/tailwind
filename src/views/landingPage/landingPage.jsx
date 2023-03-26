@@ -1,4 +1,5 @@
 import Body from "./body/body";
+import SecondBody from "./body/secondBody";
 import Header from "./header/header";
 
 const LandingPage = () => {
@@ -6,6 +7,7 @@ const LandingPage = () => {
     <>
       <Header />
       <Body />
+      <SecondBody />
     </>
   );
 };
