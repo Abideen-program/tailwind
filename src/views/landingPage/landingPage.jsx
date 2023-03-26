@@ -1,5 +1,13 @@
+import Body from "./body/body";
+import Header from "./header/header";
+
 const LandingPage = () => {
-  return <div>this is the landing page</div>;
+  return (
+    <>
+      <Header />
+      <Body />
+    </>
+  );
 };
 
 export default LandingPage;

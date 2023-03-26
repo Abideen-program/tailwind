@@ -1,7 +1,8 @@
 import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { clx } from "../utils/clx";
+import { clx } from "../../utils/clx"
+import Text from "../text";
 
 export default function Button({
   isLoading,

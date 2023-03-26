@@ -30,6 +30,10 @@ module.exports = {
           dark: "#E1AA2B",
           light: "#FBF5E6",
         },
+        tertiary: {
+          dark: "#FCFCFC",
+          light: "#FCFCFC",
+        },
         light: "#F8F8FF",
       },
     },
