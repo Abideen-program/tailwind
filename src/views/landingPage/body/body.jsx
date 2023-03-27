@@ -9,7 +9,7 @@ const Body = () => {
 
   return (
     <div className={classes}>
-      <div className="text-center lg:text-left lg:w-[50%]">
+      <div className="text-center lg:text-left lg:flex-1 flex flex-col space-y-4">
         <div className="">
           <Text
             as="h1"
@@ -19,29 +19,29 @@ const Body = () => {
           </Text>
         </div>
 
-        <div className="my-6">
+        <div className="">
           <Text as="p" classname="text-xl font-normal leading-[27px]">
             With Ginjar, monitoring your assest remotely is made easy and also
             supported by variety of interesting features.
           </Text>
         </div>
 
-        <div className="flex flex-row justify-center lg:justify-start">
+        <div className="flex flex-row justify-center space-x-4 lg:justify-start">
           <Button
             type="primary"
             size="small"
             variant="outlined"
-            classname="mr-2"
+            // classname="mr-2"
           >
             Request Demo
           </Button>
-          <Button type="primary" size="small" variant="outlined" classname="">
+          <Button  size="medium" variant="contained">
             Sign Up
           </Button>
         </div>
       </div>
 
-      <div className="lg:w-[50%] hidden lg:block relative top-[20px] right-0">
+      <div className="lg:flex-1 hidden lg:block relative top-[20px] right-0">
         <div className="flex flex-row space-x-4 justify-center mb-[45.48px]">
           <img
             src="assets/images/app-store.webp"

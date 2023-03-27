@@ -50,16 +50,15 @@ const Header = () => {
           <Text as="p">Anonymous Recharge</Text>
         </li>
         <li>
-          <div className="flex flex-row">
+          <div className="flex flex-row space-x-4">
             <Button
               type="primary"
               size="small"
               variant="outlined"
-              classname="mr-2"
             >
               Sign In
             </Button>
-            <Button type="primary" size="small" variant="outlined" classname="">
+            <Button size="medium" variant="contained">
               Sign Up
             </Button>
           </div>
@@ -69,7 +68,7 @@ const Header = () => {
 
       {/* Start of mobile view */}
       {openNav && (
-        <ul className="lg:hidden md:w-[30rem] h-screen flex flex-col justify-evenly items-start fixed right-0 top-0 bg-white pt-8 pl-6 z-10 shadow-lg shadow-slate-700 transition ease-in duration-1000">
+        <ul className="lg:hidden w-[18rem] md:w-[30rem] h-screen flex flex-col justify-evenly items-start fixed right-0 top-0 bg-white pt-8 pl-6 z-10 shadow-lg shadow-slate-700 transition ease-in duration-1000">
           <li>
             <Text as="p" classname="text-xl md:text-3xl">
               Home
@@ -110,9 +109,9 @@ const Header = () => {
                 Sign In
               </Button>
               <Button
-                type="primary"
+                
                 size="small"
-                variant="outlined"
+                variant="contained"
                 classname=""
               >
                 Sign Up

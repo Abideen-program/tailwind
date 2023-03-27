@@ -1,8 +1,10 @@
 import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { clx } from "../../utils/clx"
+import { clx } from "../../utils/clx";
 import Text from "../text";
+
+
 
 export default function Button({
   isLoading,
@@ -22,7 +24,7 @@ export default function Button({
   // const [isLoading, setLoading] = React.useState(true)
 
   const classes = clx(
-    "flex items-center justify-center space-x-2 rounded-[16px] bg-transparent ",
+    "flex items-center justify-center space-x-2 rounded-[16px] ",
     variant === "contained" &&
       size === "large" &&
       `${
@@ -36,7 +38,7 @@ export default function Button({
             : "bg-secondary-dark hover:bg-secondary-dark/80 text-white"
           : type === "white"
           ? isLoading
-           ? "bg-transparent"
+            ? "bg-transparent"
             : "bg-[#fff] hover:bg-secondary-light text-primary-dark"
           : null
       } py-[16px] px-[32px] duration-400 ${
