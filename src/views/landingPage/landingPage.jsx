@@ -1,3 +1,4 @@
+import TrustedPartner from "./body/Trusted";
 import Body from "./body/body";
 import GinjarFeatures from "./body/ginjarFeatures";
 import SecondBody from "./body/secondBody";
@@ -10,6 +11,7 @@ const LandingPage = () => {
       <Body />
       <SecondBody />
       <GinjarFeatures />
+      <TrustedPartner />
     </>
   );
 };
