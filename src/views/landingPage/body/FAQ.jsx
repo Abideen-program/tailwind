@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { clx } from "../../../utils/clx";
 import Text from "../../../components/text";
+
 const Faq = () => {
   const classes = clx("p-10 md:p-20 md:flex flex-row");
 

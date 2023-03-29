@@ -60,8 +60,7 @@ export default function Button({
           ? isLoading
             ? "bg-transparent"
             : "bg-[#fff] hover:bg-secondary-light text-primary-dark"
-          : null
-      } py-[10px] lg:py-[12px] px-[32px] duration-400 ${
+          : null      } py-[10px] lg:py-[12px] px-[32px] duration-400 ${
         disabled &&
         "bg-primary-dark/40 cursor-not-allowed hover:bg-primary-dark/40"
       }`,
