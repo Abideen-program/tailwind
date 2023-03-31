@@ -4,12 +4,11 @@ import Body from "./body/body";
 import Footer from "./body/footer";
 import GinjarFeatures from "./body/ginjarFeatures";
 import SecondBody from "./body/secondBody";
-import Header from "./header/header";
+// import Header from "./header/header";
 
 const LandingPage = () => {
   return (
     <>
-      <Header />
       <Body />
       <SecondBody />
       <GinjarFeatures />
