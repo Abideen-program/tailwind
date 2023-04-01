@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <>
       <div className={classes}>
-        <Link to='/'>
+        <Link to="/">
           <div className="md:basis-[20%]">
             <img src="assets/images/logo.png" alt="" />
           </div>
@@ -35,23 +35,33 @@ const Header = () => {
         {/* desktop view */}
         <ul className="hidden lg:flex basis-[80%] justify-between items-center flex-row space-x-6  ">
           <li>
-            <Text as="p">Home</Text>
+            <Text href="/" as="p">
+              Home
+            </Text>
           </li>
 
           <li>
-            <Text as="p">Services</Text>
+            <Text href="services" as="p">
+              Services
+            </Text>
           </li>
 
           <li>
-            <Text as="p">About Us</Text>
+            <Text href="about" as="p">
+              About Us
+            </Text>
           </li>
 
           <li>
-            <Text as="p">Contact</Text>
+            <Text href="contact" as="p">
+              Contact
+            </Text>
           </li>
 
           <li>
-            <Text as="p">Anonymous Recharge</Text>
+            <Text href="recharge" as="p">
+              Anonymous Recharge
+            </Text>
           </li>
           <li>
             <div className="flex flex-row space-x-4">
