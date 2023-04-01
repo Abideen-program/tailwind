@@ -104,7 +104,7 @@ export default function Button({
   if (href) {
     return (
       <Link to={href} onClick={onclick}>
-        <button className={classes}>
+        <button className={classes} onClick={onclick}>
           {/* Left Icon */}
           {iconLeft}
           <Text as='span' classname='text-base'>

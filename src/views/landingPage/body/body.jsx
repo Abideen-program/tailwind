@@ -35,7 +35,7 @@ const Body = () => {
           >
             Request Demo
           </Button>
-          <Button  size="medium" variant="contained" classname=''>
+          <Button href='login'  size="medium" variant="contained" classname=''>
             Sign Up
           </Button>
         </div>

@@ -3,7 +3,7 @@ import { clx } from "../../../utils/clx";
 import Text from "../../../components/text";
 import Button from "../../../components/button/button";
 import { FaOutdent, FaTimes } from "react-icons/fa";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Header = () => {
   const classes = clx(
@@ -26,9 +26,11 @@ const Header = () => {
   return (
     <>
       <div className={classes}>
-        <div className="md:basis-[20%]">
-          <img src="assets/images/logo.png" alt="" />
-        </div>
+        <Link to='/'>
+          <div className="md:basis-[20%]">
+            <img src="assets/images/logo.png" alt="" />
+          </div>
+        </Link>
 
         {/* desktop view */}
         <ul className="hidden lg:flex basis-[80%] justify-between items-center flex-row space-x-6  ">
@@ -72,32 +74,52 @@ const Header = () => {
         {/* Start of mobile view */}
         {openNav && (
           <ul className="lg:hidden w-[18rem] md:w-[30rem] h-screen flex flex-col justify-evenly items-start fixed right-0 top-0 bg-white pt-8 pl-6 z-10 shadow-lg shadow-slate-700 transition ease-in duration-1000">
-            <li>
-              <Text as="p" classname="text-xl md:text-3xl">
+            <li onClick={hideNav}>
+              <Text href="/" as="p" classname="text-xl md:text-3xl">
                 Home
               </Text>
             </li>
 
-            <li>
-              <Text as="p" classname="text-xl md:text-3xl">
+            <li onClick={hideNav}>
+              <Text
+                href="services"
+                as="p"
+                classname="text-xl md:text-3xl"
+                onClick={hideNav}
+              >
                 Services
               </Text>
             </li>
 
-            <li>
-              <Text as="p" classname="text-xl md:text-3xl">
+            <li onClick={hideNav}>
+              <Text
+                href="about"
+                as="p"
+                classname="text-xl md:text-3xl"
+                onClick={hideNav}
+              >
                 About Us
               </Text>
             </li>
 
-            <li>
-              <Text as="p" classname="text-xl md:text-3xl">
+            <li onClick={hideNav}>
+              <Text
+                href="contact"
+                as="p"
+                classname="text-xl md:text-3xl"
+                onClick={hideNav}
+              >
                 Contact
               </Text>
             </li>
 
-            <li>
-              <Text as="p" classname="text-xl md:text-3xl">
+            <li onClick={hideNav}>
+              <Text
+                href="recharge"
+                as="p"
+                classname="text-xl md:text-3xl"
+                onClick={hideNav}
+              >
                 Anonymous Recharge
               </Text>
             </li>
@@ -108,10 +130,17 @@ const Header = () => {
                   size="small"
                   variant="outlined"
                   classname="mr-1"
+                  href="login"
+                  onclick={hideNav}
                 >
                   Sign In
                 </Button>
-                <Button size="small" variant="contained" classname="">
+                <Button
+                  size="small"
+                  variant="contained"
+                  href="login"
+                  onclick={hideNav}
+                >
                   Sign Up
                 </Button>
               </div>
