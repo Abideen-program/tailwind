@@ -139,6 +139,7 @@ const SignUp = () => {
               name="confirmPassword"
               type="password"
               placeholder="Confirm Password"
+              leftIcon={<FaLock className="text-[#9799A5]"/>}
               onblur={formik.handleBlur}
               onchange={formik.handleChange}
               value={formik.values.confirmPassword}
