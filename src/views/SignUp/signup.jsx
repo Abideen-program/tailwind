@@ -4,9 +4,9 @@ import Text from "../../components/text";
 import Input from "../../components/input/input";
 import { FaEnvelope, FaLock, FaUserAlt, FaPhoneAlt } from "react-icons/fa";
 import Button from "../../components/button/button";
-// import LoginSmallScreen from "./loginSmallHeader";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import SignUpInfo from "./signupinfoSample";
 
 const SignUp = () => {
   const classes = clx(
@@ -68,7 +68,6 @@ const SignUp = () => {
 
   return (
     <div className="relative flex flex-col px-4 md:px-10 space-y-6">
-      {/* <LoginSmallScreen /> */}
       <img
         src="assets/images/spiral-background.jpg"
         className="absolute inset-0 object-cover lg:object-fill w-full h-full opacity-[1.5%] lg:opacity-[2%]"
@@ -84,6 +83,8 @@ const SignUp = () => {
           <Text as="h4" classname="md:text-[24px] text-primary-dark">
             One click away to enjoy our amazing features
           </Text>
+
+          <SignUpInfo />
         </div>
 
         <form
