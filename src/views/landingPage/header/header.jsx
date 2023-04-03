@@ -66,14 +66,14 @@ const Header = () => {
           <li>
             <div className="flex flex-row space-x-4">
               <Button
-                href={"login"}
+                href="/login"
                 type="primary"
                 size="small"
                 variant="outlined"
               >
                 Sign In
               </Button>
-              <Button href={"login"} size="small" variant="contained">
+              <Button href="/signup" size="small" variant="contained">
                 Sign Up
               </Button>
             </div>
@@ -140,7 +140,7 @@ const Header = () => {
                   size="small"
                   variant="outlined"
                   classname="mr-1"
-                  href="login"
+                  href="/login"
                   onclick={hideNav}
                 >
                   Sign In
@@ -148,7 +148,7 @@ const Header = () => {
                 <Button
                   size="small"
                   variant="contained"
-                  href="login"
+                  href="/signup"
                   onclick={hideNav}
                 >
                   Sign Up

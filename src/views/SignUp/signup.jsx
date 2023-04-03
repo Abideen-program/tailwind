@@ -1,31 +1,49 @@
-import React from "react";
+import { useState } from "react";
+import { clx } from "../../utils/clx";
+import Text from "../../components/text";
 import Input from "../../components/input/input";
+import { FaEnvelope, FaLock, FaUserAlt, FaPhoneAlt } from "react-icons/fa";
+import Button from "../../components/button/button";
+// import LoginSmallScreen from "./loginSmallHeader";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { FaEnvelope, FaUser, FaLock } from "react-icons/fa";
-import { clx } from "../../utils/clx";
-import Button from "../../components/button/button";
 
 const SignUp = () => {
-  const [validationAttempt, setValidationAttempt] = React.useState(false);
+  const classes = clx(
+    "px-0 lg:px-10 lg:flex justify-between items-center space-y-6 pb-[30px]"
+  );
 
-  const formValue = {
+  //handling validation after submission
+  const [validationAttempt, setValidationAttempt] = useState(false);
+
+  //initial values of the form
+  const initialValues = {
+    fullName: "",
     email: "",
-    age: "",
+    phoneNumber: "",
     password: "",
     confirmPassword: "",
   };
 
-  const onSubmit = () => {
-    console.log("submitting");
+  //handling submission of form
+  const onSubmit = (values, actions) => {
+    console.log(values);
+    setTimeout(() => {
+      actions.resetForm();
+    }, 2000);
   };
 
   const validationSchema = Yup.object().shape({
+    fullName: Yup.string().required("Please enter your full name"),
+
     email: Yup.string()
-      .email("Enter a valid email")
+      .email("enter a valid email")
       .required("Please enter your email address"),
 
-    age: Yup.number().positive().integer().required("Please enter your age"),
+    phoneNumber: Yup.number()
+      .positive()
+      .integer()
+      .required("Please enter your phone number"),
 
     password: Yup.string()
       .min(8)
@@ -41,75 +59,111 @@ const SignUp = () => {
   });
 
   const formik = useFormik({
-    initialValues: formValue,
+    initialValues,
     onSubmit,
     validationSchema,
-    validateOnChange: validationAttempt,
     validateOnBlur: false,
+    validateOnChange: validationAttempt,
   });
 
-  console.log(formik);
-
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <div className="flex flex-col space-y-6 p-20">
-        <Input
-          type="email"
-          label="Email"
-          name="email"
-          placeholder="Enter your email address"
-          leftIcon={<FaEnvelope className="text-[#9799A5]" />}
-          value={formik.values.email}
-          onchange={formik.handleChange}
-          onblur={formik.handleBlur}
-          errorMassage={formik.errors.email}
-        />
+    <div className="relative flex flex-col px-4 md:px-10 space-y-6">
+      {/* <LoginSmallScreen /> */}
+      <img
+        src="assets/images/spiral-background.jpg"
+        className="absolute inset-0 object-cover lg:object-fill w-full h-full opacity-[1.5%] lg:opacity-[2%]"
+        alt="spiral background"
+      />
 
-        <Input
-          type="number"
-          label="Age"
-          name="age"
-          placeholder="Enter your age"
-          leftIcon={<FaUser className="text-[#9799A5]" />}
-          value={formik.values.age}
-          onblur={formik.handleBlur}
-          onchange={formik.handleChange}
-          errorMassage={formik.errors.age}
-        />
+      <div className={classes}>
+        <div className="flex flex-col flex-1 z-50">
+          <Text as="h1" classname="text-[30px] md:text-[64px] font-semibold">
+            Let's get started!
+          </Text>
 
-        <Input
-          type="password"
-          label="Password"
-          name="password"
-          placeholder="Enter your password"
-          leftIcon={<FaLock className="text-[#9799A5]" />}
-          value={formik.values.password}
-          onblur={formik.handleBlur}
-          onchange={formik.handleChange}
-          errorMassage={formik.errors.password}
-        />
+          <Text as="h4" classname="md:text-[24px] text-primary-dark">
+            One click away to enjoy our amazing features
+          </Text>
+        </div>
 
-        <Input
-          type="password"
-          label="Confirm Password"
-          name="confirmPassword"
-          placeholder="Confirm your password"
-          leftIcon={<FaLock className="text-[#9799A5]" />}
-          value={formik.values.confirmPassword}
-          onblur={formik.handleBlur}
-          onchange={formik.handleChange}
-          errorMassage={formik.errors.confirmPassword}
-        />
-
-        <Button
-          buttonType="submit"
-          classname="w-full text-[14px] lg:text-base "
-          onclick={() => setValidationAttempt(true)}
+        <form
+          onSubmit={formik.handleSubmit}
+          className="bg-[#F8F8FF] rounded-lg pt-[70px] pb-[50px] px-4 md:px-[50px] flex-[0.8] z-50"
         >
-          Sign in
-        </Button>
+          <div className="flex flex-col space-y-6">
+            <Input
+              name="fullName"
+              type="text"
+              placeholder="Full Name"
+              leftIcon={<FaUserAlt className="text-[#9799A5]" />}
+              onblur={formik.handleBlur}
+              onchange={formik.handleChange}
+              value={formik.values.fullName}
+              errorMassage={formik.errors.fullName}
+            />
+
+            <Input
+              name="email"
+              type="email"
+              placeholder="Email Address"
+              leftIcon={<FaEnvelope className="text-[#9799A5]" />}
+              onblur={formik.handleBlur}
+              onchange={formik.handleChange}
+              value={formik.values.email}
+              errorMassage={formik.errors.email}
+            />
+
+            <Input
+              name="phoneNumber"
+              type="tel"
+              placeholder="Phone Number"
+              leftIcon={<FaPhoneAlt className="text-[#9799A5]" />}
+              onblur={formik.handleBlur}
+              onchange={formik.handleChange}
+              value={formik.values.phoneNumber}
+              errorMassage={formik.errors.phoneNumber}
+            />
+
+            <Input
+              name="password"
+              type="password"
+              placeholder="Password"
+              leftIcon={<FaLock className="text-[#9799A5]" />}
+              onblur={formik.handleBlur}
+              onchange={formik.handleChange}
+              value={formik.values.password}
+              errorMassage={formik.errors.password}
+            />
+
+            <Input
+              name="confirmPassword"
+              type="password"
+              placeholder="Confirm Password"
+              onblur={formik.handleBlur}
+              onchange={formik.handleChange}
+              value={formik.values.confirmPassword}
+              errorMassage={formik.errors.confirmPassword}
+            />
+
+            <Button
+              buttonType="submit"
+              onclick={() => setValidationAttempt(true)}
+            >
+              Sign up
+            </Button>
+
+            <Text
+              as="p"
+              classname="text-center text-[14px] lg:text-base"
+              href="/login"
+            >
+              Already have an account?
+              <span className="text-secondary-dark"> Login</span>
+            </Text>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   );
 };
 

@@ -46,7 +46,7 @@ const Login = () => {
   });
 
   return (
-    <div className="relative flex flex-col px-10 space-y-6">
+    <div className="relative flex flex-col px-4 md:px-10 space-y-6">
       <LoginSmallScreen />
       <img
         src="assets/images/spiral-background.jpg"
@@ -67,7 +67,7 @@ const Login = () => {
 
         <form
           onSubmit={formik.handleSubmit}
-          className="bg-[#F8F8FF] rounded-lg pt-[70px] pb-[50px] px-10 md:px-[50px] flex-[0.8] z-50"
+          className="bg-[#F8F8FF] rounded-lg pt-[70px] pb-[50px] px-4 md:px-[50px] flex-[0.8] z-50"
         >
           <div className="flex flex-col space-y-6">
             <Input
@@ -110,7 +110,7 @@ const Login = () => {
             <Text
               as="p"
               classname="text-center text-[14px] lg:text-base"
-              href="signup"
+              href="/signup"
             >
               <span className="text-[#6C6F7F]">New User?</span> Create an
               Account

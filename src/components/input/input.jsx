@@ -87,7 +87,7 @@ const Input = ({
         <Text
           as="span"
           weight="medium"
-          classname="text-[15px] lg:text-base text-red-600"
+          classname="text-[13px] text-red-600"
         >
           {errorMassage}
         </Text>
