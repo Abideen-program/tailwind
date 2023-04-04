@@ -28,7 +28,7 @@ const Header = () => {
       <div className={classes}>
         <Link to="/">
           <div className="md:basis-[20%]">
-            <img src="assets/images/logo.png" alt="" />
+            <img src="assets/images/logo.png" alt="logo" />
           </div>
         </Link>
 

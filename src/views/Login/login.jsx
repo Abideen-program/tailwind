@@ -94,7 +94,7 @@ const Login = () => {
 
             <Text
               as="h4"
-              href="login"
+              href="forget"
               classname="text-secondary-dark text-[14px] lg:text-base text-right"
             >
               Forgot Password
